@@ -1,2 +1,7 @@
-# Bachelorarbeit
-Repo für BA - DHBW Karlsruhe
+# Bachelorarbeit - DHBW Karlsruhe
+# Db2 Recovery
+
+### Inhalt:
+- Thesis
+- Code
+- Bewertungen
