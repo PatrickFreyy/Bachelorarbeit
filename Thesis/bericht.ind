@@ -1,0 +1,36 @@
+\begin{theindex}
+
+  \item Bilder, \hyperpage{9}
+
+  \indexspace
+
+  \item Definition, \hyperpage{10}
+
+  \indexspace
+
+  \item Formatdatei, \hyperpage{8}
+
+  \indexspace
+
+  \item Literaturreferenz, \hyperpage{9}
+
+  \indexspace
+
+  \item PDF-Datei, \hyperpage{8}
+  \item Punkt
+    \subitem Unterpunkt, \hyperpage{10}
+
+  \indexspace
+
+  \item \emph  {The \TeX  {}book}, \hyperpage{9}
+
+  \indexspace
+
+  \item Verweis, \hyperindexformat{\see{Punkt}}{10}
+
+  \indexspace
+
+  \item \emph  {Webseite der \emph  {Deutschsprachige Anwendervereinigung TeX e.V.}}, 
+		\hyperpage{9}
+
+\end{theindex}
