@@ -1,0 +1,18 @@
+# Latex
+**/*.bbl
+**/*.bib
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.for
+**/*.idx
+**/*.ist
+**/*.lof
+**/*.log
+**/*.lol
+**/*.lot
+**/*.sty
+**/*.gz
+**/*.tdo
+**/*.toc
+**/*.run.xml
