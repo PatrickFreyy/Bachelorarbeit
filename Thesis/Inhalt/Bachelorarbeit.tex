@@ -1,0 +1,60 @@
+\documentclass[
+   ngerman          % neue deutsche Rechtschreibung
+  ,a4paper          % Papiergrösse
+  ,12pt
+  ,pdftex
+%  ,disable         % Todo-Markierungen auschalten
+]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{Bachelorarbeit}
+\usepackage{titlesec}
+
+\newcommand{\Autor}{Patrick Frey}
+\newcommand{\MatrikelNummer}{3946606}
+\newcommand{\Kursbezeichnung}{tinf20b2}
+\newcommand{\FirmenName}{Atruvia AG}
+\newcommand{\FirmenStadt}{Karlsruhe}
+\newcommand{\FirmenLogoDeckblatt}{\includegraphics[width=5cm]{../Bilder/Atruvia-Logo}}
+\newcommand{\BetreuerFirma}{Rolf Merkle}
+\newcommand{\BetreuerDHBW}{Michael Vetter}
+\newcommand{\Was}{Bachleorarbeit}
+\newcommand{\Titel}{Backup- und Recoverystrategie für Db2 z/OS auf dem IBM Mainframe mittels IBM- und BMC-Tools}
+\newcommand{\AbgabeDatum}{4. September 2023}
+\newcommand{\Dauer}{12 Wochen}
+\newcommand{\Abschluss}{Bachelor of Science}
+\newcommand{\Studiengang}{Informatik / Angewandte Informatik}
+
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{\thechapter. }{0pt}{}
+
+\hypersetup{%%
+pdfauthor={\Autor},
+pdftitle={\Titel},
+pdfsubject={\Was}
+}
+
+
+% \includeonly{
+  % }
+  
+  \bibliography{Bachelorarbeit}
+  
+  \begin{document}
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  \include{00_Main/Titelseite}
+  \include{00_Main/Erklärung}
+  \include{00_Main/Verzeichnisse}
+  \include{01_Kapitel/zOS}
+  
+
+\include{changelog}
+
+\newpage
+\addcontentsline{toc}{chapter}{Liste der ToDo's}
+\listoftodos[Liste der ToDo's]
+
+
+\end{document}
