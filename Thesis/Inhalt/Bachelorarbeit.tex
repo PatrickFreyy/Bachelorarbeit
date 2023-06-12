@@ -9,7 +9,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{Bachelorarbeit}
 \usepackage{titlesec}
-
+\usepackage{setspace}
+\newcommand{\loreipsum}{Die CPU hat keinen direkten Zugriff auf den Hauptspeicher. Stattdessen wird der Hauptspeicher-Cache dazwischengeschaltet. Die CPU greift nur auf diesen Cache zu. Der Hauptspieher wird dann durch den Cache aktualisiert.}
 \newcommand{\Autor}{Patrick Frey}
 \newcommand{\MatrikelNummer}{3946606}
 \newcommand{\Kursbezeichnung}{tinf20b2}
@@ -47,7 +48,12 @@ pdfsubject={\Was}
   \include{00_Main/Titelseite}
   \include{00_Main/Erklärung}
   \include{00_Main/Verzeichnisse}
+
+  \include{01_Kapitel/Problemstellung}
   \include{01_Kapitel/zOS}
+  \include{01_Kapitel/Umgebung}
+  \include{01_Kapitel/Copystrategie}
+  \include{01_Kapitel/Migration}
   
 
 \include{changelog}
