@@ -10,7 +10,11 @@
 \usepackage{Bachelorarbeit}
 \usepackage{titlesec}
 \usepackage{setspace}
-\newcommand{\loreipsum}{Die CPU hat keinen direkten Zugriff auf den Hauptspeicher. Stattdessen wird der Hauptspeicher-Cache dazwischengeschaltet. Die CPU greift nur auf diesen Cache zu. Der Hauptspieher wird dann durch den Cache aktualisiert.}
+\usepackage{xcolor}
+\usepackage{todonotes}
+
+\newcommand{\loreipsum}{\textcolor{black!30}{Die CPU hat keinen direkten Zugriff auf den Hauptspeicher. Stattdessen wird der Hauptspeicher-Cache dazwischengeschaltet. Die CPU greift nur auf diesen Cache zu. Der Hauptspeicher wird dann durch den Cache aktualisiert.}}
+
 \newcommand{\Autor}{Patrick Frey}
 \newcommand{\MatrikelNummer}{3946606}
 \newcommand{\Kursbezeichnung}{tinf20b2}
@@ -35,26 +39,28 @@ pdftitle={\Titel},
 pdfsubject={\Was}
 }
 
+\includeonly{
+  00_Main/Titelseite,
+  00_Main/Erklärung,
+  00_Main/Verzeichnisse,
+  01_Kapitel/Problemstellung}
+  
+\bibliography{Bachelorarbeit}
+  
+\begin{document}
 
-% \includeonly{
-  % }
-  
-  \bibliography{Bachelorarbeit}
-  
-  \begin{document}
-  
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-  \include{00_Main/Titelseite}
-  \include{00_Main/Erklärung}
-  \include{00_Main/Verzeichnisse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  \include{01_Kapitel/Problemstellung}
-  \include{01_Kapitel/zOS}
-  \include{01_Kapitel/Umgebung}
-  \include{01_Kapitel/Copystrategie}
-  \include{01_Kapitel/Migration}
-  
+\include{00_Main/Titelseite}
+\include{00_Main/Erklärung}
+\include{00_Main/Verzeichnisse}
+
+\include{01_Kapitel/Problemstellung}
+\include{01_Kapitel/zOS}
+\include{01_Kapitel/Umgebung}
+\include{01_Kapitel/Copystrategie}
+\include{01_Kapitel/Migration}
+
 
 \include{changelog}
 
