@@ -11,7 +11,7 @@ Ein klassischer Server ist ein Computer mit derselben Struktur wie ein herkömml
 % folgend gibt es eine CPU, bestehend aus Rechen- und Steuerwerk, sowie Hauptspeicher und Peripherie\todo{Zitat Vorlesung Röthig}. Alle diese Komponenten sind eng miteinander verbunden und sind aufeinander abgestimmt.
 %In Sonderfällen werden auch anwendungsspezifische Prozessoren, wie Graphical Processing Units oder Tensor Processing Units, auf die Arbeit von der CPU ausgelagert wird. Der wesentliche Unterschied ist die stärkere Netzwerkkarte, durch die mehrere Server parallelgeschaltet werden. So kann die Hardware skaliert werden.
 
-Ein \emph{Mainframe}, zu deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es sehr schwierig ist, ein Mainframe zu programmieren und zu betreiben.
+Ein \emph{Mainframe}, zu deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es sehr schwierig ist, ein Mainframe zu programmieren und zu betreiben. In der \FirmenName wird das Flagschiff von IBM eingesetzt, das \emph{\mbox{Z Systems}}. 'Z' steht hierbei für "Zero Downtime"; IBM verspricht eine durchschnittliche Downtime von 
 
 \todo{Prozessortypen nachlesen Redbook}
 
@@ -25,14 +25,14 @@ Ein \emph{Mainframe}, zu deutsch Großrechner, verfügt dagegen über andere Kom
         Weil sie aus besonderen Komponenten bestehen, die nur bei wenigen Herstellern verfügbar sind, sind Mainframes teuer in der Anschaffung. Heute sind >99 \% aller Mainframes von IBM.
         \\
         \hline
-        Die \ac{hw} ist allgemein, dedizierte \ac{hw}, z.B. Graphical Processing Unit oder Tensor Processing Unit, ist selten. \mbox{Use Cases} sind in \ac{sw} implementiert.
+        Die \ac{hw} ist allgemein und multi-purpose. \mbox{Use Cases} sind in \ac{sw} implementiert. Selbst dedizierte \ac{hw}, wie eine Graphical Processing Unit oder eine Tensor Processing Unit, ist nicht auf einen bestimmten Anwendungsfall beschränkt.
         &
-        Die \ac{hw} ist komplex und vielseitig. Für jeden Zweck, z.B. Bildverarbeitung, Kryptografie oder, ist entsprechend dedizierte \ac{hw} vorhanden.
+        Die \ac{hw} ist komplex und vielseitig. Für jeden Anwendungsfall, z.B. \ac{os}, In-/Output, Datenbank-\ac{sw} oder Java-Applikation, ist eigene \ac{hw} vorhanden.
         \\
         \hline
-        Server C
+        Kann flexibel für quasi jede Aufgabe eingesetzt werden, ist aber nicht besonders effizient.
         &
-        Mainframe Z
+        Spezialisierte \ac{hw} schränkt den Einsatz ein auf die vom Hersteller vorgesehenen Zwecke. Die Anpassung der \ac{hw} an diese Zwecke führt jedoch zu einer enormen Optimierung.
         \\
         \hline
     \end{tabularx}
