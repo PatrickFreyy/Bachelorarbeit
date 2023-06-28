@@ -10,10 +10,7 @@
 \usepackage{Bachelorarbeit}
 \usepackage{titlesec}
 \usepackage{setspace}
-\usepackage{xcolor}
-\usepackage{todonotes}
 
-\newcommand{\loreipsum}{\textcolor{black!30}{Die CPU hat keinen direkten Zugriff auf den Hauptspeicher. Stattdessen wird der Hauptspeicher-Cache dazwischengeschaltet. Die CPU greift nur auf diesen Cache zu. Der Hauptspeicher wird dann durch den Cache aktualisiert.}}
 
 \newcommand{\Autor}{Patrick Frey}
 \newcommand{\MatrikelNummer}{3946606}
@@ -23,7 +20,7 @@
 \newcommand{\FirmenLogoDeckblatt}{\includegraphics[width=5cm]{../Bilder/Atruvia-Logo}}
 \newcommand{\BetreuerFirma}{Rolf Merkle}
 \newcommand{\BetreuerDHBW}{Michael Vetter}
-\newcommand{\Was}{Bachleorarbeit}
+\newcommand{\Was}{Bachelorarbeit}
 \newcommand{\Titel}{Backup- und Recoverystrategie für Db2 z/OS auf dem IBM Mainframe mittels IBM- und BMC-Tools}
 \newcommand{\AbgabeDatum}{4. September 2023}
 \newcommand{\Dauer}{12 Wochen}
@@ -43,17 +40,22 @@ pdfsubject={\Was}
   00_Main/Titelseite,
   00_Main/Erklärung,
   00_Main/Verzeichnisse,
-  01_Kapitel/Problemstellung}
+  00_Main/Abkürzungsverzeichnis,
+  01_Kapitel/Problemstellung,
+  01_Kapitel/zOS}
   
 \bibliography{Bachelorarbeit}
-  
+ 
+
 \begin{document}
+% \setlength{\parindent}{1cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{00_Main/Titelseite}
 \include{00_Main/Erklärung}
 \include{00_Main/Verzeichnisse}
+\include{00_Main/Abkürzungsverzeichnis}
 
 \include{01_Kapitel/Problemstellung}
 \include{01_Kapitel/zOS}
@@ -62,11 +64,14 @@ pdfsubject={\Was}
 \include{01_Kapitel/Migration}
 
 
-\include{changelog}
-
 \newpage
-\addcontentsline{toc}{chapter}{Liste der ToDo's}
-\listoftodos[Liste der ToDo's]
+%\printbibliography
+
+
+%\include{changelog}
+% \newpage
+% \addcontentsline{toc}{chapter}{Liste der ToDo's}
+% \listoftodos[Liste der ToDo's]
 
 
 \end{document}

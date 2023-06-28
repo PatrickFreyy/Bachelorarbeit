@@ -1,11 +1,19 @@
 \chapter{Aufgabe und Ziel}
 
 \subsubsection{Umfeld}
-\loreipsum
+Die Atruvia AG ist in Geschäfts- und Servicefelder unterteilt. Das Servicefeld Plattformservices stellt die technischen Grundlagen für dritte, wertschöpfende Dienstleistungen bereit. Der Plattformservice Databaseservices betreibt alle zentralen Datenbanken, die für die Kerngeschäftsprozesse benötigt werden. Die vorwiegende Technologie ist Db2 z/OS von IBM. Während die meisten modernen \acp{dbms}, wie Oracle oder MSSQL, auf Servern laufen, setzt IBM auf sein eigenes Mainframe, das \emph{\mbox{Z Systems}}. 
 
 \subsubsection{Aufgabe}
-\todo{Aufgabe: Die CPU hat keinen Zugriff auf den Hauptspeicher}
-\loreipsum
+Ein Datenbanksystem muss zu jeder Zeit wiederherstellbar sein. Äußere Einflüsse wie Naturkatastrophen, innnere Störungen durch Hardwareschäden oder menschliches Fehlverhalten kann dazu führen, dass Daten korrupt, inkonsitent oder fachlich falsch sind. In diesen Fällen muss ein funktionierender Stand wiederhergestellt werden. Das Unternehmen hat dahingehend \ac{sla} mit den Kunden, welche die erlaubte nicht-Verfügbarkeit vorgeben. Um das sicherzustellen, soll eine Backup- und Recoverystrategie entwickelt werden. Bestandteil dieser Strategie sind verschiedene Parameter wie Copy-Bestandteile und verwendetes Tool. Als Nebenfaktoren sollen Speicherkomplexität des Backups und die Laufzeitkomplexität der Recovery berücksichtigt werden.
+
+Mittels Zwischenergebnissen werden Kosten bestimmt und eine Laufzeitprognosen erstellt. Diese dienen der Vorbereitung auf den finalen Schritt: Die Recovery eines gesamten Datenbanksubsystems.
+
+Zur Ergebnisverfikation wird ein Tool entwickelt, welches die Integrität des recoverten Subsystems überprüft. Dafür müssen betroffenen \acp{db} und \acp{ts} identifiziert und auf Vollständigkeit geprüft werden.
+
+
 
 \subsubsection{gewünschtes Ergebnis}
-\loreipsum
+\todo{Konkretisieren}
+Am Ende soll eine praktikable Recoverystrategie stehen. Diese beinhaltet eine Empfehlung der zu verwendenden Tools und die Festlegung von Optionen, die der Optimierung dienen.
+
+Außerdem muss das Ergebnis verifiziert werden. Dafür muss die eigens entwickelte Anwendung einen Healthcheck ausführen und eine mögliche Recovery prognostizieren.

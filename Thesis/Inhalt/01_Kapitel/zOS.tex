@@ -1,18 +1,52 @@
-\chapter{IBM Z}
+\chapter{Mainframe}
 
 \section{Aufbau Mainframe}
 
-\subsubsection{Plexe}
+\subsubsection{Was ist ein Mainframe}
+Für die \ac{edv} im Businesskontext können verschiedene Technologien eingesetzt werden. Das \emph{Mainframe} \cite[ist ein zentrales Datenlager]{redbook.1}, welches zur konzentrierten Datenverarbeitung eingesetzt wird. Es ist besonders geeignet für Prozesse, die nicht interaktiv sind und einen hohen Datendurchsatz haben, z.B. \ac{oltp} und \ac{olap}
 
-\subsubsection{LPAR}
+
+\subsubsection[Z Systems vs. x64]{Unterschied zwischen Mainframe und x64}
+Ein klassischer Server ist ein Computer mit derselben Struktur wie ein herkömmlicher PC nach der \mbox{von-Neumann-Architektur}. Wie ein PC ist er vielseitig und einfach zu betreiben. Viele Server zusammen ergeben dann eine \emph{Serverfarm}.
+% folgend gibt es eine CPU, bestehend aus Rechen- und Steuerwerk, sowie Hauptspeicher und Peripherie\todo{Zitat Vorlesung Röthig}. Alle diese Komponenten sind eng miteinander verbunden und sind aufeinander abgestimmt.
+%In Sonderfällen werden auch anwendungsspezifische Prozessoren, wie Graphical Processing Units oder Tensor Processing Units, auf die Arbeit von der CPU ausgelagert wird. Der wesentliche Unterschied ist die stärkere Netzwerkkarte, durch die mehrere Server parallelgeschaltet werden. So kann die Hardware skaliert werden.
+
+Ein \emph{Mainframe}, zu deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es sehr schwierig ist, ein Mainframe zu programmieren und zu betreiben.
+
+\todo{Prozessortypen nachlesen Redbook}
+
+\begin{table}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        \textbf{Server} & \textbf{Mainframe} \\
+        \hline
+        Server verfügen nur über einfache Komponenten. Diese sind auf dem Markt in großer Stückzahl vorhanden und dadurch günstig in der Anschaffung.
+        &
+        Weil sie aus besonderen Komponenten bestehen, die nur bei wenigen Herstellern verfügbar sind, sind Mainframes teuer in der Anschaffung. Heute sind >99 \% aller Mainframes von IBM.
+        \\
+        \hline
+        Die \ac{hw} ist allgemein, dedizierte \ac{hw}, z.B. Graphical Processing Unit oder Tensor Processing Unit, ist selten. \mbox{Use Cases} sind in \ac{sw} implementiert.
+        &
+        Die \ac{hw} ist komplex und vielseitig. Für jeden Zweck, z.B. Bildverarbeitung, Kryptografie oder, ist entsprechend dedizierte \ac{hw} vorhanden.
+        \\
+        \hline
+        Server C
+        &
+        Mainframe Z
+        \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\subsection{Plex}
+
+\subsection{LPAR}
 
 \section{z/OS}
 
 \subsection{Db2}
 
 \subsubsection{rDB}
-\subsubsection{Subsystem}
-\subsubsection{Subsystem}
 \subsubsection{Subsystem}
 
 \subsection{TSO}

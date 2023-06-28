@@ -1,10 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Descr:       LaTeX Style für Vorlage für Berichte der DHBW-Karlsruhe
-%% Author:      Prof. Dr. Jürgen Vollmer, juergen.vollmer@dhbw-karlsruhe.de
-%% $Id: bericht.sty,v 1.25 2020/03/13 15:38:13 vollmer Exp $
-%% -*- coding: utf-8 -*-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %% ACHTUNG, wenn man eine eigene Format-Datei benutzt dann werden Änderungen an bericht.sty
 %% erst wirksam, wenn die Format-Datei neu erzeugt wurde!!!
 
@@ -35,24 +28,30 @@
 \usepackage{lmodern}    % Computern-Modern Schriftfamilie
 \usepackage{amssymb}    % Symbole
 \usepackage{framed}     % Framed or shaded regions that can break across pages.
-		        % http://dante.ctan.org/tex-archive/help/Catalogue/entries/framed.html
-			% Benutzung siehe erklaerung.tex
+% http://dante.ctan.org/tex-archive/help/Catalogue/entries/framed.html
+% Benutzung siehe erklaerung.tex
+
 
 \usepackage{wrapfig}    % Bilder von textumfliessen lassen
 
-\usepackage[colorinlistoftodos]{todonotes}
-                        % Einfache Verwaltung und Erstellung von TODO's Markierungen
-			% http://tug.ctan.org/tex-archive/macros/latex/contrib/todonotes/
-			% wichtige Paket-Optionen: disable
+% \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{todonotes}
+% Einfache Verwaltung und Erstellung von TODO's Markierungen
+% http://tug.ctan.org/tex-archive/macros/latex/contrib/todonotes/
+% wichtige Paket-Optionen: disable
 
 \usepackage{makeidx}    % Erstellung eines Indexes
 \makeindex
+
+\usepackage{parskip}
+\usepackage{hyphenat}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% eigene Macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\email}[1]{\href{mailto:#1}{\textless#1\textgreater}}
+\newcommand{\loreipsum}{\textcolor{black!30}{Die CPU hat keinen direkten Zugriff auf den Hauptspeicher. Stattdessen wird der Hauptspeicher-Cache dazwischengeschaltet. Die CPU greift nur auf diesen Cache zu. Der Hauptspeicher wird dann durch den Cache aktualisiert.}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% citation, bibliography, BIBLATEX
@@ -61,12 +60,13 @@
 % auch das "biblatex"-Paket benutzen.
 \usepackage{etoolbox}  % http://dante.ctan.org/tex-archive/help/Catalogue/entries/etoolbox.html
 \usepackage[
-	hyperref=true,          % Klickbare Referenzen in der PDF-Datei
-        backref=true,           % In der Literaturref. die Seiten angeben, wo ein \cite dazu steht
-        bibencoding=inputenc,   % s. inputenc-Paket
-	style=authoryear-comp,
-        backend=bibtex,
-	sorting=nty]{biblatex}  % http://dante.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html
+  hyperref=true,          % Klickbare Referenzen in der PDF-Datei
+  backref=true,           % In der Literaturref. die Seiten angeben, wo ein \cite dazu steht
+  bibencoding=inputenc,   % s. inputenc-Paket
+  %style=authoryear-comp,
+  style=numeric,
+  backend=bibtex,
+  sorting=nty]{biblatex}  % http://dante.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html
 \renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
 
 % Abstand der einzelnen Einträge in der Literaturangaben
@@ -88,30 +88,30 @@
 % Meine speziellen \cite-Kommandos:
 % Ausgabe des Untertitels (SUBTITLE) Feldes einer Referenz
 \DeclareCiteCommand{\citesubtitle}
-  {\boolfalse{citetracker}%
-   \boolfalse{pagetracker}%
-   \usebibmacro{prenote}}
-  {\indexfield{indextitle}%
-   \printfield[citetitle]{subtitle}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\boolfalse{citetracker}%
+  \boolfalse{pagetracker}%
+  \usebibmacro{prenote}}
+{\indexfield{indextitle}%
+  \printfield[citetitle]{subtitle}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 % Ausgabe des Titels (TITLE) Feldes und der Referenz
 \DeclareCiteCommand{\citetitleref}
-  {\booltrue{citetracker}%
-   \booltrue{pagetracker}%
-   \usebibmacro{prenote}}
-  {\indexfield{indextitle}%
-   \printfield[citetitle]{title} \cite{\thefield{entrykey}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\booltrue{citetracker}%
+  \booltrue{pagetracker}%
+  \usebibmacro{prenote}}
+{\indexfield{indextitle}%
+  \printfield[citetitle]{title} \cite{\thefield{entrykey}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 % wie citetitleref, nur als Fussnote
 \DeclareCiteCommand{\citetitlerefFootnote}
-  {}
-  {\footnote{\citetitleref{\thefield{entrykey}}}}
-  {}
-  {}
+{}
+{\footnote{\citetitleref{\thefield{entrykey}}}}
+{}
+{}
 
 
 % Ausgabe der URL im HOWPUBLISHED Feld
@@ -124,33 +124,33 @@
 %  MONTH	= ABC      % Monat der Einsichtnahme (jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov. dec
 %}
 \DeclareCiteCommand{\citeurl}
-  {\booltrue{citetracker}%
-   \booltrue{pagetracker}%
-   \usebibmacro{prenote}}
-  {\indexfield{indextitle}%
-   \printfield[citetitle]{howpublished}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\booltrue{citetracker}%
+  \booltrue{pagetracker}%
+  \usebibmacro{prenote}}
+{\indexfield{indextitle}%
+  \printfield[citetitle]{howpublished}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 % Ausgabe der URL im HOWPUBLISHED Feld und Referenz
 \DeclareCiteCommand{\citeurlref}
-  {\booltrue{citetracker}%
-   \booltrue{pagetracker}%
-   \usebibmacro{prenote}}
-  {\indexfield{indextitle}%
-   \printfield[citetitle]{howpublished} \cite{\thefield{entrykey}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\booltrue{citetracker}%
+  \booltrue{pagetracker}%
+  \usebibmacro{prenote}}
+{\indexfield{indextitle}%
+  \printfield[citetitle]{howpublished} \cite{\thefield{entrykey}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 % Augabe: Vorname Nachname des Autors
 \DeclareCiteCommand{\citefullauthor}
-  {\booltrue{citetracker}%
-   \booltrue{pagetracker}%
-   \usebibmacro{prenote}}
-  {\indexfield{indextitle}%
-    \textsc{\printnames[byeditor]{author}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\booltrue{citetracker}%
+  \booltrue{pagetracker}%
+  \usebibmacro{prenote}}
+{\indexfield{indextitle}%
+  \textsc{\printnames[byeditor]{author}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Programmlistings setzen
@@ -191,8 +191,8 @@
 \newcommand{\listofequations}{\listof{eq}{\forname}}
 
 \newcommand{\eqlabel}[2]{
-        \label{#1}
-        \addcontentsline{for}{eq}{(\ref{#1}) #2}}
+  \label{#1}
+  \addcontentsline{for}{eq}{(\ref{#1}) #2}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -201,10 +201,10 @@
 % Definitionen mit Ausgabe im Index
 % gibt #2 aus und fügt #1 bzw. #2 (wenn #1 nicht angegeben) in den Index ein
 \newcommand{\Def}[2][]{%
-   \def\OPTARG{#1}%
-   \def\EMPTY{}%
-   \ifx\OPTARG\EMPTY\index{#2}\else\index{#1}\fi%
-   \textbf{#2}\xspace%
+  \def\OPTARG{#1}%
+  \def\EMPTY{}%
+  \ifx\OPTARG\EMPTY\index{#2}\else\index{#1}\fi%
+  \textbf{#2}\xspace%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
