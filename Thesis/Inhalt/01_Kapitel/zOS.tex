@@ -1,52 +1,90 @@
-\chapter{Mainframe}
+\chapter{Einführung ins Mainframe}
 
-\section{Aufbau Mainframe}
+\section{Z Systems}
+Im Rahmen dieser Bachelorarbeit wird keine dezentrale Software entwickelt, sondern zentral auf dem IBM Mainframe (früher Großrechner) entwickelt.  In der \FirmenName wird das Flaggschiff von IBM eingesetzt, das \emph{Z~Systems}, aktuell in der 15. Generation. Das Mainframe ist eine besondere Art Computer, die mitunter ähnliche Aufgaben erfüllt wie ein Server. Jedoch treten zum Teil wesentliche Unterschiede auf.
 
-\subsubsection{Was ist ein Mainframe}
-Für die \ac{edv} im Businesskontext können verschiedene Technologien eingesetzt werden. Das \emph{Mainframe} \cite[ist ein zentrales Datenlager]{redbook.1}, welches zur konzentrierten Datenverarbeitung eingesetzt wird. Es ist besonders geeignet für Prozesse, die nicht interaktiv sind und einen hohen Datendurchsatz haben, z.B. \ac{oltp} und \ac{olap}
+\subsection{Was ist ein Mainframe}
+
+Für die \ac{edv} im Businesskontext können verschiedene Technologien eingesetzt werden. Das \emph{Mainframe} >>ist ein zentrales Datenlager<<\cite{redbook.1}, welches zur konzentrierten Datenverarbeitung eingesetzt wird. Es ist besonders geeignet für Prozesse, die nicht interaktiv sind und einen hohen Datendurchsatz haben, z.B. \ac{oltp} und \ac{olap}.
 
 
 \subsubsection[Z Systems vs. x64]{Unterschied zwischen Mainframe und x64}
-Ein klassischer Server ist ein Computer mit derselben Struktur wie ein herkömmlicher PC nach der \mbox{von-Neumann-Architektur}. Wie ein PC ist er vielseitig und einfach zu betreiben. Viele Server zusammen ergeben dann eine \emph{Serverfarm}.
-% folgend gibt es eine CPU, bestehend aus Rechen- und Steuerwerk, sowie Hauptspeicher und Peripherie\todo{Zitat Vorlesung Röthig}. Alle diese Komponenten sind eng miteinander verbunden und sind aufeinander abgestimmt.
-%In Sonderfällen werden auch anwendungsspezifische Prozessoren, wie Graphical Processing Units oder Tensor Processing Units, auf die Arbeit von der CPU ausgelagert wird. Der wesentliche Unterschied ist die stärkere Netzwerkkarte, durch die mehrere Server parallelgeschaltet werden. So kann die Hardware skaliert werden.
 
-Ein \emph{Mainframe}, zu deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es sehr schwierig ist, ein Mainframe zu programmieren und zu betreiben. In der \FirmenName wird das Flagschiff von IBM eingesetzt, das \emph{\mbox{Z Systems}}. 'Z' steht hierbei für "Zero Downtime"; IBM verspricht eine durchschnittliche Downtime von 
+Möchte man zentral Daten verarbeiten oder Software abspielen, so ist ein Server die einfachste Lösung. Ein klassischer Server ist ein Computer mit derselben Struktur wie ein herkömmlicher PC nach der \mbox{von-Neumann-Architektur}. Wie ein PC ist er vielseitig und einfach zu betreiben.
 
-\todo{Prozessortypen nachlesen Redbook}
-
-\begin{table}
+Ein \emph{Mainframe}, zu Deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es sehr schwierig ist, ein Mainframe zu programmieren und zu betreiben.
+\begin{table}[H]
+    \centering
     \begin{tabularx}{\textwidth}{|X|X|}
         \hline
         \textbf{Server} & \textbf{Mainframe} \\
         \hline
         Server verfügen nur über einfache Komponenten. Diese sind auf dem Markt in großer Stückzahl vorhanden und dadurch günstig in der Anschaffung.
         &
-        Weil sie aus besonderen Komponenten bestehen, die nur bei wenigen Herstellern verfügbar sind, sind Mainframes teuer in der Anschaffung. Heute sind >99 \% aller Mainframes von IBM.
+        Weil sie aus besonderen Komponenten bestehen, die nur bei wenigen Herstellern verfügbar sind, sind Mainframes teuer in der Anschaffung. Heute sind >\,99 \% aller Mainframes von IBM.
         \\
         \hline
-        Die \ac{hw} ist allgemein und multi-purpose. \mbox{Use Cases} sind in \ac{sw} implementiert. Selbst dedizierte \ac{hw}, wie eine Graphical Processing Unit oder eine Tensor Processing Unit, ist nicht auf einen bestimmten Anwendungsfall beschränkt.
+        Die \ac{hw} ist allgemein und vielseitig einsetzbar. Interne Prozesse sind in \ac{sw} implementiert. Selbst dedizierte \ac{hw}, wie eine Graphical Processing Unit oder eine Tensor Processing Unit, ist nicht auf einen bestimmten Anwendungsfall beschränkt.
         &
-        Die \ac{hw} ist komplex und vielseitig. Für jeden Anwendungsfall, z.B. \ac{os}, In-/Output, Datenbank-\ac{sw} oder Java-Applikation, ist eigene \ac{hw} vorhanden.
+        Die \ac{hw} ist komplex und spezialisiert. Für jede Art von Operation, z.B. \ac{os}, In-/Output, Datenbank-\ac{sw} oder Java-Applikation \cite{redbook.1}, ist eigene \ac{hw} vorhanden.
         \\
         \hline
-        Kann flexibel für quasi jede Aufgabe eingesetzt werden, ist aber nicht besonders effizient.
+        Server können flexibel für jede Aufgabe eingesetzt. Server sind besser bei benutzerspezifischen Anwendungen mit hoher Interaktion.
         &
-        Spezialisierte \ac{hw} schränkt den Einsatz ein auf die vom Hersteller vorgesehenen Zwecke. Die Anpassung der \ac{hw} an diese Zwecke führt jedoch zu einer enormen Optimierung.
+        Spezialisierte \ac{hw} führt zu einem hohen Datendurchsatz. \ac{oltp}, z.B. Banktransaktionen, und \ac{olap}, z.B. statistische Analysen auf dem \ac{dwh}, laufen wesentlich schneller.
+        \\
+        \hline
+        Im Vergleich zu PCs verfügen Server über eine starke Netzwerkkarte und können so miteinander verbunden werden. Ein kleiner Verbund wird als \emph{Cluster}, ein großer Verbund als \emph{Serverfarm} bezeichnet. Für einen leistungsstarken Verbund wird eine hohe Anzahl an Servern benötigt.
+        &
+        Ein einzelnes Mainframe verfügt bereits über eine hohe Anzahl an Prozessoren. Mehrere Mainframes zusammen ergeben einen \emph{\acs{sys}}
+        \\
+        \hline
+        Downtime <\,0,0000001~\%
+        &
+        Downtime Ø >\,0,0001~\%~\cite{itic}, daher \frq{}Z\flq{} für >>zero Downtime<<
         \\
         \hline
     \end{tabularx}
+    \caption{Meine Tabelle}
 \end{table}
 
-\subsection{Plex}
 
-\subsection{LPAR}
+\subsection{Aufbau Mainframe}
 
-\section{z/OS}
+Obwohl ein Mainframe größer und leistungsstärker ist als ein Server, ist noch immer nicht leistungsstark genug, um die gesamte \ac{edv} eines Unternehmens zu beherrschen. Deswegen werden Mainframes ähnlich wie Server skaliert. Die beiden größten Skalierungsmethoden sind der physische Zusammenschluss mehrerer Maschinen und die logische Aufteilung zur Lastverteilung.
+
+
+\subsubsection{Sysplex}
+
+Ein \ac{sys} besteht aus mehreren Mainframe-Maschinen, die >>durch Spezialisierte \ac{hw} zu einer Einheit zusammengeschlossen sind<<. Innerhalb eines \ac{sys} können Mainframes Ressourcen teilen, z.B. Hauptspeicher, Datenbanken und I/O - Schnittstellen. Prozesse können von einer beliebigen Kombination von Maschinen innerhalb des \ac{sys} ausgeführt werden, wodurch die Arbeitslast immer gleichmäßig verteilt wird und bis in die hohe Auslastung skaliert. Während Server bereits bei 20 \% Auslastung langsamer werden, können Z Systems bis >\,90~\% belastet werden.
+
+Die Steigerung zum \ac{sys} ist der \emph{Parallel \ac{sys}}. Das ist eine Implementation mittels \acp{cf} unter dem \emph{\ac{os}} z/OS. Eine \ac{cf} ist eine logische Einheit innerhalb eines Mainframes, die dazu dient, Adressen zu übersetzen, Daten zu cachen und ggf. den Zugriff auf sie zu sperren. Sind alle Anwendungen für den Parallel \ac{sys} optimiert, >>kann die Arbeitslast:
+\begin{itemize}
+    \item dynamisch über alle Systeme verteilt werden
+    \item vertikal und horizontal skaliert werden
+    \item bei geplantem und ungeplantem Ausfall eines Systems verfügbar bleiben
+    \item alle Systeme innerhalb des Setups als eins benutzen<<\cite{redbook.1}
+\end{itemize}
+
+In der \FirmenName werden mehrere \acp{sys} verwendet. So gibt es unterschiedliche \acp{sys} für Produktions- und Entwicklungsumgebung. Während dieser Bachelorarbeit wird ausschließlich auf dem \textbf{E-Plex}, welcher keine Produktion enthält, gearbeitet. Dies ist wichtig, um den laufenden Betrieb des Unternehmens nicht zu stören oder gar zu stoppen. 
+
+
+\subsubsection{LPAR}
+
+Ähnlich wie virtuelle Maschinen auf einem Servercluster ausgeführt werden, wird die \ac{hw} des Mainframes in logische Gruppen unterteilt. Eine >>\ac{lpar} ist eine Gruppe an \ac{hw}-Prozessoren, die ein \ac{os} ausführt<<\cite{redbook.1}. Die Unterteilung des physischen Systems wird über einen Hypervisor Typ~1 realisiert, eine Firmware, die in den Prozessor eingebaut ist und nicht Teil des \ac{os} ist. Innerhalb eines Parallel \ac{sys} können \acp{lpar} \ac{hw}-Ressourcen wie Hauptspeicher\todo{Werden Daten geteilt?} teilen. Jede \ac{lpar} hat aber ihre eigenen Daten.
+
+Der größte Vorteil einer \ac{lpar} besteht in der Isolation. Ihre Daten und Prozesse einer \ac{lpar} sind unabhängig von denen anderer \acp{lpar}. Dadurch erhält man Sicherheit und Integrität. Der Admin kann Zugriffe auf eine \ac{lpar} kontrollieren und Rechte dafür vergeben.\todo{Warum Performance-Gewinn?} 
+
+\section[z/OS]{Betriebssystem}
+Das \ac{os} \emph{z/OS} ist speziell für IBM Z~Systems entwickelt. 
+
 
 \subsection{Db2}
 
+
 \subsubsection{rDB}
+
+
 \subsubsection{Subsystem}
 
 \subsection{TSO}

@@ -8,7 +8,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{Bachelorarbeit}
-\usepackage{titlesec}
+\usepackage[newparttoc]{titlesec}
 \usepackage{setspace}
 
 
@@ -27,8 +27,6 @@
 \newcommand{\Abschluss}{Bachelor of Science}
 \newcommand{\Studiengang}{Informatik / Angewandte Informatik}
 
-\titleformat{\chapter}[block]
-  {\normalfont\huge\bfseries}{\thechapter. }{0pt}{}
 
 \hypersetup{%%
 pdfauthor={\Autor},
@@ -42,13 +40,23 @@ pdfsubject={\Was}
   00_Main/Verzeichnisse,
   00_Main/Abkürzungsverzeichnis,
   01_Kapitel/Problemstellung,
-  01_Kapitel/zOS}
+  01_Kapitel/zOS,
+  01_Kapitel/Copystrategie,
+  01_Kapitel/Umgebung,
+  }
   
 \bibliography{Bachelorarbeit}
- 
+  
+\pagestyle{fancy}
+\fancyhf{} % Leert die Kopf- und Fußzeilen
+\fancyhead[L]{\rightmark} % Setzt das aktuelle Kapitel in die linke obere Ecke
+\fancyhead[R]{\thepage} % Setzt die Seitennummerierung in die rechte obere Ecke
+
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{\thechapter. }{0pt}{}
 
 \begin{document}
-% \setlength{\parindent}{1cm}
+% \setlength{\parindent}{0cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -57,15 +65,15 @@ pdfsubject={\Was}
 \include{00_Main/Verzeichnisse}
 \include{00_Main/Abkürzungsverzeichnis}
 
+\pagenumbering{arabic}
 \include{01_Kapitel/Problemstellung}
 \include{01_Kapitel/zOS}
 \include{01_Kapitel/Umgebung}
 \include{01_Kapitel/Copystrategie}
-\include{01_Kapitel/Migration}
 
 
 \newpage
-%\printbibliography
+\printbibliography
 
 
 %\include{changelog}
