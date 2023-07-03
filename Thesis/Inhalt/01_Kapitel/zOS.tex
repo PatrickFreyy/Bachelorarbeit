@@ -5,14 +5,14 @@ Im Rahmen dieser Bachelorarbeit wird keine dezentrale Software entwickelt, sonde
 
 \subsection{Was ist ein Mainframe}
 
-Für die \ac{edv} im Businesskontext können verschiedene Technologien eingesetzt werden. Das \emph{Mainframe} >>ist ein zentrales Datenlager<<\cite{redbook.1}, welches zur konzentrierten Datenverarbeitung eingesetzt wird. Es ist besonders geeignet für Prozesse, die nicht interaktiv sind und einen hohen Datendurchsatz haben, z.B. \ac{oltp} und \ac{olap}.
+Für die \ac{edv} im Businesskontext können verschiedene Technologien eingesetzt werden. Das \emph{Mainframe} >>ist ein zentrales Datenlager<<\cite{redbook.1}, welches zur konkurrierende Datenverarbeitung eingesetzt wird. Es ist besonders geeignet für Prozesse, die einen hohen Datendurchsatz haben, z.B. \ac{oltp}, \ac{olap} und Batch.
 
 
 \subsubsection[Z Systems vs. x64]{Unterschied zwischen Mainframe und x64}
 
 Möchte man zentral Daten verarbeiten oder Software abspielen, so ist ein Server die einfachste Lösung. Ein klassischer Server ist ein Computer mit derselben Struktur wie ein herkömmlicher PC nach der \mbox{von-Neumann-Architektur}. Wie ein PC ist er vielseitig und einfach zu betreiben.
 
-Ein \emph{Mainframe}, zu Deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es sehr schwierig ist, ein Mainframe zu programmieren und zu betreiben.
+Ein \emph{Mainframe}, zu Deutsch Großrechner, verfügt dagegen über andere Komponenten und eine andere Architektur. Er ist im Vergleich viel spezialisierter und wird nur für sehr konkrete Aufgaben verwendet, da es schwieriger ist, ein Mainframe zu programmieren und zu betreiben.
 \begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{|X|X|}
@@ -39,9 +39,9 @@ Ein \emph{Mainframe}, zu Deutsch Großrechner, verfügt dagegen über andere Kom
         Ein einzelnes Mainframe verfügt bereits über eine hohe Anzahl an Prozessoren. Mehrere Mainframes zusammen ergeben einen \emph{\acs{sys}}
         \\
         \hline
-        Downtime <\,0,0000001~\%
-        &
         Downtime Ø >\,0,0001~\%~\cite{itic}, daher \frq{}Z\flq{} für >>zero Downtime<<
+        &
+        Downtime <\,0,0000001~\%
         \\
         \hline
     \end{tabularx}
@@ -80,6 +80,9 @@ Das \ac{os} \emph{z/OS} ist speziell für IBM Z~Systems entwickelt.
 
 
 \subsection{Db2}
+
+
+\subsubsection{RACF}
 
 
 \subsubsection{rDB}
