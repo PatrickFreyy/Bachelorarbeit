@@ -1,5 +1,6 @@
 # Latex
 **/*.bbl
+**/*-blx.bib
 **/*.aux
 **/*.fdb_latexmk
 **/*.fls
@@ -16,3 +17,5 @@
 **/*.blg
 **/*.ilg
 **/*.ind
+**/*.synctex
+**/*.synctex
