@@ -1,6 +1,5 @@
 # Latex
 **/*.bbl
-**/*.bib
 **/*.aux
 **/*.fdb_latexmk
 **/*.fls
@@ -12,7 +11,6 @@
 **/*.lol
 **/*.lot
 **/*.gz
-**/*.tdo
 **/*.toc
 **/*.run.xml
 **/*.blg

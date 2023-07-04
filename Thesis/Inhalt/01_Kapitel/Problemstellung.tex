@@ -1,20 +1,20 @@
 \chapter{Aufgabe und Ziel}
 
 \subsubsection{Umfeld}
-Die \FirmenName
-Die Atruvia AG ist in Geschäfts- und Servicefelder unterteilt. Das Servicefeld Plattformservices stellt die technischen Grundlagen für dritte, wertschöpfende Dienstleistungen bereit. Der Plattformservice Databaseservices betreibt alle zentralen Datenbanken, die für die Kerngeschäftsprozesse benötigt werden. Die vorwiegende Technologie ist Db2 z/OS von IBM. Während die meisten modernen \acp{dbms}, wie Oracle oder MSSQL, auf Servern laufen, setzt IBM auf sein eigenes Mainframe, das \emph{\mbox{Z Systems}}. 
+Die \FirmenName ist der IT-Dienstleister der genossenschaftlichen Finanzgruppe. Neben Softwareentwicklung und IT-Beratung ist sie auch verantwortlich für Datenspeicherung, -verarbeitung und Transaktionshandling. Die Abteilung \emph{Plattformservices Databaseservices} betreibt alle zentralen Datenbanken, die für die Kerngeschäftsprozesse benötigt werden, z.B. Abwickeln von Finanztransaktionen oder Datenanalyse. Hierbei handelt es sich um besonders sensible Vorgänge, die ein besonderes Maß an Sicherheit und Zuverlässigkeit bedürfen. Die vorwiegend eingesetzte Technologie ist Db2~z/OS von IBM. Während die meisten modernen \acp{dbms}, wie Oracle oder MSSQL, auf Servern laufen, setzt IBM auf seine eigene \ac{hw}, der Mainframe \emph{\mbox{Z Systems}}. 
 
 \subsubsection{Aufgabe}
-Ein Datenbanksystem muss zu jeder Zeit wiederherstellbar sein. Äußere Einflüsse wie Naturkatastrophen, innnere Störungen durch Hardwareschäden oder menschliches Fehlverhalten kann dazu führen, dass Daten korrupt, inkonsitent oder fachlich falsch sind. In diesen Fällen muss ein funktionierender Stand wiederhergestellt werden. Das Unternehmen hat dahingehend \ac{sla} mit den Kunden, welche die erlaubte nicht-Verfügbarkeit vorgeben. Um das sicherzustellen, soll eine Backup- und Recoverystrategie entwickelt werden. Bestandteil dieser Strategie sind verschiedene Parameter wie Copy-Bestandteile und verwendetes Tool. Als Nebenfaktoren sollen Speicherkomplexität des Backups und die Laufzeitkomplexität der Recovery berücksichtigt werden.
+Um die Zuverlässigkeit des Systems zu gewährleisten, ist eine Absicherung gegen Ausfälle unvermeidlich. Ein Datenbanksystem muss zu jeder Zeit wiederherstellbar sein. Äußere Einflüsse wie Naturkatastrophen, innnere Störungen durch Hardwareschäden oder menschliches Fehlverhalten kann dazu führen, dass Daten korrupt, inkonsitent oder fachlich falsch sind. In diesen Fällen muss ein funktionierender Stand wiederhergestellt werden. Das Unternehmen hat dahingehend \ac{sla}, spezielle Verträge, mit den Kunden, welche die erlaubte nicht-Verfügbarkeit vorgeben. Um das sicherzustellen, soll eine Backup- und Recoverystrategie entwickelt werden. Bestandteil dieser Strategie sind verschiedene Parameter wie Backup-Bestandteile und verwendetes Tool. Als Nebenfaktoren sollen der Speicherbedarf des Backups und die Laufzeit der Recovery minimiert werden.
 
-Mittels Zwischenergebnissen werden Kosten bestimmt und eine Laufzeitprognosen erstellt. Diese dienen der Vorbereitung auf den finalen Schritt: Die Recovery eines gesamten Datenbanksubsystems.
+Mittels Zwischenergebnissen werden Kosten bestimmt und eine Laufzeitprognosen erstellt. Diese dienen der Vorbereitung auf den finalen Schritt: Die Recovery eines gesamten Datenbanksubsystems. Durch eine Simulation eines Totalausfalls eines Systems soll empirisch bewiesen werden, dass eine Wiederherstellung eines funktionierenden Stands möglich ist.
 
-Zur Ergebnisverfikation wird ein Tool entwickelt, welches die Integrität des recoverten Subsystems überprüft. Dafür müssen betroffenen \acp{db} und \acp{ts} identifiziert und auf Vollständigkeit geprüft werden.
+Zur Ergebnisverfikation wird ein Tool entwickelt, welches die Integrität des Subsystems überprüft. Dafür müssen betroffenen Bestandteile der Datenbank identifiziert werden. Anschließend muss geprüft werden, ob die \acp{db} vollständig sind und über ein Backup verfügen.
+% \acp{db} und \acp{ts} identifiziert und auf Vollständigkeit geprüft werden.
 
 
 
 \subsubsection{gewünschtes Ergebnis}
 \todo{Konkretisieren}
-Am Ende soll eine praktikable Recoverystrategie stehen. Eine Empfehlung soll ausgeprochen werden über die Durchführung der Recovery, welche Methode, welche Tools sollen verwendet werden. Dies ist über Speicher- und Laufzeitkomplexität zu begründen.
+Am Ende soll eine praktikable Recoverystrategie stehen. Eine Empfehlung soll ausgeprochen werden über die Bestandteile des Backups, die Methode der Revocery und die verwendeten Tools. Dies ist über Speicher- und Laufzeitbedarf zu begründen.
 
-Außerdem muss das Ergebnis verifiziert werden. Dafür muss die eigens entwickelte Anwendung einen Healthcheck ausführen indem die Vollständigkeit des Backups geprüft wird. Zusätzlich soll die Komplexität einer Recovery prognostiziert werden.
+Außerdem muss das Ergebnis verifiziert werden. Dafür muss die eigens entwickelte Anwendung einen Healthcheck ausführen indem die Vollständigkeit des Backups geprüft wird. Zusätzlich soll die Laufzeit einer Recovery prognostiziert werden.
