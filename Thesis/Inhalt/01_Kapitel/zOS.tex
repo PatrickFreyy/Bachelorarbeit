@@ -1,6 +1,6 @@
 \chapter{Einführung in Mainframe}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Z Systems}
 Im Rahmen dieser Bachelorarbeit wird keine dezentrale Software entwickelt, sondern zentral auf dem IBM Mainframe (früher Großrechner) gearbeitet.  In der \FirmenName wird das Flaggschiff von IBM eingesetzt, das \emph{Z~Systems}, aktuell in der 15. Generation. Der Mainframe ist eine besondere Art Computer, die mitunter ähnliche Aufgaben erfüllt wie ein Server. Jedoch treten zum Teil wesentliche Unterschiede auf.
 
@@ -73,30 +73,42 @@ In der \FirmenName werden mehrere \acp{sys} verwendet. So gibt es jeweils unters
 
 Ähnlich wie virtuelle Maschinen auf einem Servercluster ausgeführt werden, wird die \ac{hw} des Mainframes in logische Gruppen unterteilt. Eine >>\ac{lpar} ist eine Gruppe an \ac{hw}-Prozessoren, die ein \ac{os} ausführt<<\cite{redbook.1}. Die Unterteilung des physischen Systems wird über einen Hypervisor Typ~1 realisiert, eine Firmware, die in den Prozessor eingebaut ist und nicht Teil des \ac{os} ist. Jede \ac{lpar} führt ihr eigenes \ac{os} und Scheduling aus.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section[\z]{Betriebssystem \z}
 Das \ac{os} \emph{\z} ist speziell für IBM Z~Systems entwickelt. Es ist darauf ausgelegt, besonders robust zu sein und zeichnet sich durch seine Anwendungen aus. Funktionen wie Scheduling oder Data-Allocation, die klassischerweise zu den Kernaufgaben eines \ac{os} gehören, werden auf dedizierte Anwendungen ausgelagert.
 
-% \subsection{TSO}
-% REXX
 
-% \subsection{IWS}
+% \subsubsection{IWS}
 
+
+% \subsubsection{IMS}
+
+
+\subsubsection{Job}
+Ein Job ist eine Aufgabe, die wiederum aus Teilaufgaben bestehen kann.  Jobs bilden die Grundlage für die Arbeit mit dem Mainframe. Sie bestehen aus einem oder mehreren Befehlen, die Programme ausführen oder Daten ent-\,/\,laden. Standardmäßig werden sie in \ac{jcl} geschrieben. \ac{jcl} ist eine Skriptsprache über die die Rahmenbedingungen einer Aufgabe, z.B. Environtment oder In-\,/\,Output, definiert werden können. JCL selbst ist nicht zum Programmieren geeignet, da sie über keine Programmierfunktionen wie Schleifen oder andere Kontrollstrukturen verfügt.
+Um ausgeprägte Programme zu erstellen wird \ac{rex} verwendet. Hierbei handelt es sich um eine interpretierte Programmiersprache, die für Programme mit komplexen Abläufen geeignet ist. \ac{rex} kann auch innerhalb eines \ac{jcl}-Jobs verwendet werden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section[Db2]{Datenbankmanagementsystem Db2 z/OS}
-Die Basis für \ac{edv} ist die Datenspeicherung. Dafür wird das von IBM entwickelte DBMS \emph{Db2 für z/OS} verwendet. Db2 Hat
+Db2 ist ein relationales \ac{dbms}, das speziell für den IBM Mainframe entwickelt ist. Es ist nativ gut verbunden mit anderen IBM Produkten wie 
 
 \subsection{Datenorganisation}
 
-
 \subsubsection[\ac{db}]{Datenbank}
 
-
 \subsubsection[\ac{ts}]{Tablespace}
-
 
 \subsubsection[\ac{tb}]{Table}
 
 
 \subsection{Objekte}
 
+\subsubsection{Indizes}
+
 \subsubsection{LOB}
+BLOB, CLOB
+Trennung in Aux und Data-Table
+
+
+\subsection{\ac{db}-Subsystem}
+Instanz einer 
